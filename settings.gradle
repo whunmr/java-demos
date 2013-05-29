@@ -1,1 +1,1 @@
-include(":dynamicproxy")
+include(":dynamic-proxy")

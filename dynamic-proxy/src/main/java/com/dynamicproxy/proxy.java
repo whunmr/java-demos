@@ -39,9 +39,9 @@ class ServerInvocationHandler implements InvocationHandler {
     }
 }
 
-public class main {
+public class proxy {
     public static void main(String args[]) {
-        IServer server = (IServer) Proxy.newProxyInstance(main.class.getClassLoader(),
+        IServer server = (IServer) Proxy.newProxyInstance(proxy.class.getClassLoader(),
                 new Class[]{IServer.class},
                 new ServerInvocationHandler(new ServerImpl()));
 

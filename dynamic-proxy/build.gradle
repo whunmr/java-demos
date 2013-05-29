@@ -1,4 +1,4 @@
-project (':dynamicproxy') {
+project (':dynamic-proxy') {
     dependencies {
     }
 }
