@@ -6,12 +6,7 @@ import net.sf.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
-class Algorithm {
-    public void runAlgorithm() throws InterruptedException {
-        System.out.println("running the algorithm");
-        Thread.sleep(500);
-    }
-}
+//TASK2
 
 class MyInterceptor implements MethodInterceptor {
     private Object realObj;
@@ -20,14 +15,9 @@ class MyInterceptor implements MethodInterceptor {
     }
 
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        System.out.println("Before");
-
-        long time1 = System.currentTimeMillis();
-        Object res = method.invoke(realObj, objects);
-
-        System.out.println("After");
-        System.out.println("Took: " + (System.currentTimeMillis() - time1) + " ms");
-        return res;
+        //TODO: 1. print out "dynamic proxy" before call real method
+        //TODO: 2. call the real method
+        return result;
     }
 }
 
@@ -38,8 +28,14 @@ public class cglib {
 
     public static <T> T createProxy(T obj) {
         Enhancer e = new Enhancer();
-        e.setSuperclass(obj.getClass());
-        e.setCallback(new MyInterceptor(obj));
+
+        e.setSuperclass(
+                //TODO: 3. fill here. you can refer to here:http://markbramnik.blogspot.jp/2010/04/cglib-introduction.html
+        );
+
+        e.setCallback(
+                //TODO: 4. fill here
+        );
 
         return (T) e.create();
     }
